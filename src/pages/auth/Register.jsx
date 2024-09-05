@@ -4,6 +4,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Nav from "../../includes/Nav";
+import logo from "../../assets/logo.png";
+import Panner from "../../coponents/Panner";
 
 const Register = () => {
   const formik = useFormik({
@@ -39,13 +41,13 @@ const Register = () => {
         data-arrows="false"
       >
         <div>
-          <div className="hero-inner">
+          <div className="hero-inner" style={{ backgroundColor: "#101c2f" }}>
             <div className="overlay"></div>
             <div
               className="hero-bg"
               data-bg-src="assets/img/bg/h-1-1.jpg"
             ></div>
-            <Link to="/dashboard">dash</Link>
+            {/* <Link to="/dashboard">dash</Link> */}
             <div className="container">
               <div className="row justify-content-between">
                 <div className="col-lg-6">
@@ -54,7 +56,7 @@ const Register = () => {
                       Get Best event Management
                     </span>
                     <h1 className="hero-title">
-                      Events, Meetups & Conferences
+                      ThinkAI & Beyond: The Future Intelligence
                     </h1>
                     <p className="hero-text">
                       Sed porttitor lectus nibh. Vestibulum ac diam sit amet
@@ -77,8 +79,12 @@ const Register = () => {
                     action="mail.php"
                     method="post"
                     onSubmit={formik.handleSubmit}
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #024cbb 24%, #006 97%)",
+                    }}
                   >
-                    <h3 className="title ">Register Now</h3>
+                    <h3 className="title  ">Register Now</h3>
                     <span className="subtitle">Make A Booking</span>
                     <div className="row gx-20">
                       <div className="col-md-12 form-group">
@@ -112,43 +118,26 @@ const Register = () => {
                         />
                       </div>
                       <div className="col-md-12 form-group">
-                        <select
+                        <input
                           className="form-control"
-                          name="chosenPackage"
-                          id="subject"
+                          type="tel"
+                          name="phone"
+                          id="tel"
+                          placeholder="Company Name"
                           onChange={formik.handleChange}
-                        >
-                          <option value="Choose Package">Company Name</option>
-                          <option value="Oil Change">Oil Change</option>
-                          <option value="Tire Rotation">Tire Rotation</option>
-                          <option value="Brake Inspection">
-                            Brake Inspection
-                          </option>
-                          <option value="Engine Tune-Up">Engine Tune-Up</option>
-                          <option value="Transmission Flush">
-                            Transmission Flush
-                          </option>
-                        </select>
+                        />
                       </div>
                       <div className="col-md-12 form-group">
-                        <select
+                        <input
                           className="form-control"
-                          name="ticketQuantity"
-                          id="subject"
+                          type="tel"
+                          name="phone"
+                          id="tel"
+                          placeholder="Job Title"
                           onChange={formik.handleChange}
-                        >
-                          <option value="Ticket Quantity">Job Title</option>
-                          <option value="Oil Change">Oil Change</option>
-                          <option value="Tire Rotation">Tire Rotation</option>
-                          <option value="Brake Inspection">
-                            Brake Inspection
-                          </option>
-                          <option value="Engine Tune-Up">Engine Tune-Up</option>
-                          <option value="Transmission Flush">
-                            Transmission Flush
-                          </option>
-                        </select>
+                        />
                       </div>
+
                       <div className="col-md-12 form-group">
                         <button className="vs-btn style2" type="submit">
                           Register Now

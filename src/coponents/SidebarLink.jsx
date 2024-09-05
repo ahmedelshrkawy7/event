@@ -12,26 +12,21 @@ const SidebarLink = ({ href, icon, id }) => {
       className={`animate_from_left ${id === 0 ? "" : `animation_delay-${id}`}`}
     >
       <div
-        className={`group flex items-center justify-between gap-2 transition  hover:bg-red-100 w-full p-5 px-10 rounded-e-3xl h-12 border-l-4 border-l-transparent hover:border-l-red-500 ${
-          true ? "bg-red-400 border-l-2 " : ""
-        }`}
-        onClick={() => setShow(!show)}
+        className={`group flex items-center justify-between gap-2 transition  hover:bg-blue-100 w-full  px-10 rounded-e-3xl h-12 border-l-4 border-l-transparent hover:border-l-blue-500 `}
       >
         <img
           src={icon}
           alt=""
-          className="group-hover:text-red-600 text-black w-6 "
+          className="group-hover:text-blue-600 text-black w-6 "
         />
         <Link
-          className={`group-hover:text-red-600 font-medium text-md  flex-1 ${
-            true ? "text-red-600" : ""
-          }`}
+          className={`group-hover:text-blue-600 font-medium text-md  flex-1 `}
         >
           {href}
         </Link>
 
         <IoIosArrowForward
-          className={` text-xl group-hover:text-red-500 ${
+          className={` text-xl group-hover:text-blue-500 ${
             show ? "rotate-90" : ""
           }`}
         />

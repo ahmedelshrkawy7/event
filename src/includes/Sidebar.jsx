@@ -1,4 +1,5 @@
 import SidebarLink from "../coponents/SidebarLink";
+import logo from "../assets/logo.png";
 
 const Sidebar = () => {
   const data = [
@@ -27,7 +28,7 @@ const Sidebar = () => {
   return (
     <div className="sm:p-5 h-screen  ">
       <div className="bg-white h-full   md:w-[300px] w-0 border hidden overflow-hidden border-gray-200 py-5 rounded-3xl sm:flex flex-col gap-10 shadow   items-center">
-        <img src={""} alt="" className="w-40" />
+        <img src={logo} alt="" className="w-48" />
 
         <div className=" flex flex-col gap-8 mt-10 w-full">
           {data.map((el, index) => {

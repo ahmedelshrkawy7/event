@@ -2,9 +2,17 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav
+      className="navbar navbar-expand-lg bg-white bg-body-tertiary h-20 rounded-xl border-1 border-gray-300 shadow
+    "
+      style={
+        {
+          // background: "linear-gradient(135deg, #024cbb 24%, #006 97%)",
+        }
+      }
+    >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand text-blue-800 text-3xl" href="#">
           Navbar
         </a>
         <button

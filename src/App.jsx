@@ -8,11 +8,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./includes/Sidebar";
 import Nav from "./includes/Nav";
+import Panner from "./coponents/Panner";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Register />,
+    element: (
+      <>
+        <Panner />
+
+        <Register />
+      </>
+    ),
   },
   {
     path: "/dashboard",
@@ -20,7 +27,7 @@ const router = createBrowserRouter([
       <div className="flex" style={{ display: "flex" }}>
         <Sidebar />
 
-        <div style={{ flexGrow: 1 }}>
+        <div className="flex flex-col gap-4 p-4 " style={{ flexGrow: 1 }}>
           <Nav />
           <Dash />
         </div>
