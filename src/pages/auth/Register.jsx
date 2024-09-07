@@ -67,9 +67,9 @@ const Register = () => {
                       <a href="about.html" className="vs-btn">
                         About Us
                       </a>
-                      <a href="about.html" className="vs-btn style3">
-                        Get Started
-                      </a>
+                      <Link to="/login" className="vs-btn style3">
+                        Login
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -85,6 +85,7 @@ const Register = () => {
                     }}
                   >
                     <h3 className="title  ">Register Now</h3>
+                    <div className="flex flex-end w-full"></div>
                     <span className="subtitle">Make A Booking</span>
                     <div className="row gx-20">
                       <div className="col-md-12 form-group">
