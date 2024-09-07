@@ -89,10 +89,10 @@ const Login = () => {
                       <div className="col-md-12 form-group">
                         <input
                           className="form-control"
-                          type="email"
+                          type="password"
                           name="password"
                           id="email"
-                          placeholder="Email Address"
+                          placeholder="password"
                           onChange={formik.handleChange}
                         />
                       </div>
