@@ -5,18 +5,18 @@ const Panner = () => {
     <div>
       {" "}
       <div className="container mt-12">
-        <div className="header-inner h-40 flex items-center !justify-between">
+        <div className="header-inner lg:h-40 flex items-center !justify-between">
           <div className="menu-top flex justify-between w-full">
-            <div className="flex gx-50 justify-content-between align-items-center gx-sm-0 w-full p-6">
-              <div className=" flex justify-between w-1/3 ">
+            <div className="flex flex-col lg:flex-row gx-50 gap-10 justify-content-between align-items-center gx-md-0 w-full p-6">
+              <div className=" flex justify-between  md:w-1/3 ">
                 <div className=" mr-10 ">
                   <a href="index.html">
-                    <img src={logo} className=" w-64" />
+                    <img src={logo} className=" sm:w-64" />
                   </a>
                 </div>
               </div>
-              <div className="flex  justify-between w-2/3">
-                <div className=" header-info d-none d-lg-flex pe-0">
+              <div className="flex flex-col lg:flex-row gap-10 items-center  justify-between lg:w-2/3 w-full">
+                <div className=" header-info  d-lg-flex pe-0">
                   <div className="header-info_icon">
                     <i className="fas fa-envelope"></i>
                   </div>
@@ -27,7 +27,7 @@ const Panner = () => {
                     </div>
                   </div>
                 </div>
-                <div className=" header-info d-none d-lg-flex pe-0">
+                <div className=" header-info  d-lg-flex pe-0">
                   <div className="header-info_icon">
                     <i className="fas fa-phone-alt"></i>
                   </div>
