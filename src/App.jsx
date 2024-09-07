@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./includes/Sidebar";
 import Nav from "./includes/Nav";
 import Panner from "./coponents/Panner";
+import AppLayout from "./pages/AppLayout";
 
 const router = createBrowserRouter([
   {
@@ -22,27 +23,18 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        index: true,
+        path: "/login",
         element: <Login />,
       },
       {
-        path: "register",
+        index: true,
         element: <Register />,
       },
     ],
   },
   {
     path: "/dashboard",
-    element: (
-      <div className="flex" style={{ display: "flex" }}>
-        <Sidebar />
-
-        <div className="flex flex-col gap-4 p-4 " style={{ flexGrow: 1 }}>
-          <Nav />
-          <Dash />
-        </div>
-      </div>
-    ),
+    element: <AppLayout />,
     loader: async () => {
       const res = await axios.get("http://localhost:8800/api/users");
 

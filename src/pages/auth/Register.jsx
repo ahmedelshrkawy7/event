@@ -67,7 +67,7 @@ const Register = () => {
                       <a href="about.html" className="vs-btn">
                         About Us
                       </a>
-                      <Link to="/" className="vs-btn style3">
+                      <Link to="/login" className="vs-btn style3">
                         Login
                       </Link>
                     </div>

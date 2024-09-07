@@ -11,6 +11,7 @@ const Login = () => {
       password: "",
     },
     onSubmit: (values) => {
+      navigate("/dashboard");
       console.log("====================================");
       console.log(values);
       console.log("====================================");
@@ -56,9 +57,9 @@ const Login = () => {
                       <a href="about.html" className="vs-btn">
                         About Us
                       </a>
-                      <a href="about.html" className="vs-btn style3">
-                        Get Started
-                      </a>
+                      <Link to="/" className="vs-btn style3">
+                        Register
+                      </Link>
                     </div>
                   </div>
                 </div>
