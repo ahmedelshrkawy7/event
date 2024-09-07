@@ -12,7 +12,7 @@ import Panner from "./coponents/Panner";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    index: true,
     element: (
       <>
         <Panner />
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register />,
       },
     ],
