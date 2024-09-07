@@ -12,7 +12,7 @@ import Panner from "./coponents/Panner";
 
 const router = createBrowserRouter([
   {
-    index: true,
+    path: "/",
     element: (
       <>
         <Panner />

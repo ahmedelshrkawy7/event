@@ -1,8 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 
 const Dash = () => {
-  const data = useLoaderData();
-  console.log("🚀 ~ Dash ~ data:", data);
+  const data = useLoaderData() || [];
 
   return (
     <div className="flex items-center ">
