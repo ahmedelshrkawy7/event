@@ -11,7 +11,7 @@ const Panner = () => {
               <div className=" flex justify-between  md:w-1/3 ">
                 <div className=" mr-10 ">
                   <a href="index.html">
-                    <img src={logo} className=" sm:w-64" />
+                    <img src={logo} className=" w-56 md:w-64" />
                   </a>
                 </div>
               </div>
