@@ -16,17 +16,25 @@ const Dash = () => {
               background: "linear-gradient(135deg, #024cbb 24%, #006 97%)",
             }}
           >
-            <th scope="col" style={{ color: "white" }} className="rounded-s-lg">
+            <th
+              scope="col"
+              style={{ color: "white" }}
+              className="rounded-ss-lg"
+            >
               #
-            </th>
-            <th scope="col text-white" style={{ color: "white" }}>
-              Full Name
             </th>
             <th scope="col" style={{ color: "white" }}>
               email
             </th>
-            <th scope="col" style={{ color: "white" }} className="rounded-e-lg">
+            <th scope="col" style={{ color: "white" }}>
               phone
+            </th>
+            <th
+              className="rounded-se-lg"
+              scope="col text-white"
+              style={{ color: "white" }}
+            >
+              Full Name
             </th>
           </tr>
         </thead>
@@ -35,9 +43,9 @@ const Dash = () => {
             return (
               <tr key={el.id} className="h-12">
                 <th scope="row">{index + 1}</th>
-                <td>{el.fullName}</td>
                 <td>{el.email}</td>
                 <td>{el.phone}</td>
+                <td>{el.fullName}</td>
               </tr>
             );
           })}

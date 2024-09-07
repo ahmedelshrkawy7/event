@@ -1,9 +1,11 @@
-import React from "react";
+import { MdLogout } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <nav
-      className="navbar navbar-expand-lg bg-white bg-body-tertiary h-20 rounded-xl border-1 border-gray-300 shadow
+      className="navbar navbar-expand-lg bg-white bg-body-tertiary h-20 rounded-xl border-1 border-gray-300 shadow w-full
     "
       style={
         {
@@ -11,11 +13,11 @@ const Nav = () => {
         }
       }
     >
-      <div className="container-fluid">
+      <div className=" flex items-center justify-between w-full p-8">
         <a className="navbar-brand text-blue-800 text-3xl" href="#">
           Navbar
         </a>
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -25,31 +27,11 @@ const Nav = () => {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-          </ul>
-        </div>
+        </button> */}
+        <MdLogout
+          className="text-blue-500 text-3xl"
+          onClick={() => navigate("/login")}
+        />
       </div>
     </nav>
   );

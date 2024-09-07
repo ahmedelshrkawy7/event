@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Register from "./pages/auth/Register";
 import Dash from "./pages/Dash";
@@ -17,9 +17,19 @@ const router = createBrowserRouter([
       <>
         <Panner />
 
-        <Register />
+        <Outlet />
       </>
     ),
+    children: [
+      {
+        index: true,
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+    ],
   },
   {
     path: "/dashboard",
@@ -39,14 +49,6 @@ const router = createBrowserRouter([
       return res.data;
     },
     children: [],
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/sidebar",
-    element: <Sidebar />,
   },
 ]);
 

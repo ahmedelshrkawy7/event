@@ -58,11 +58,11 @@ const Register = () => {
                     <h1 className="hero-title">
                       ThinkAI & Beyond: The Future Intelligence
                     </h1>
-                    <p className="hero-text">
+                    {/* <p className="hero-text">
                       Sed porttitor lectus nibh. Vestibulum ac diam sit amet
                       quam vehicula lentum sed sit amet amet quam vehicula dui
                       amet quam vehicula.
-                    </p>
+                    </p> */}
                     <div className="hero-btns">
                       <a href="about.html" className="vs-btn">
                         About Us
