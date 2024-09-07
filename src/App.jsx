@@ -10,6 +10,7 @@ import Sidebar from "./includes/Sidebar";
 import Nav from "./includes/Nav";
 import Panner from "./coponents/Panner";
 import AppLayout from "./pages/AppLayout";
+import About from "./coponents/About";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         <Panner />
 
         <Outlet />
+        <About />
       </>
     ),
     children: [

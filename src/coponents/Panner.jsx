@@ -7,7 +7,7 @@ const Panner = () => {
       <div className="container mt-12">
         <div className="header-inner lg:h-40 flex items-center !justify-between">
           <div className="menu-top flex justify-between w-full">
-            <div className="flex flex-col lg:flex-row gx-50 gap-10 justify-content-between align-items-center gx-md-0 w-full p-6">
+            <div className="flex flex-col lg:flex-row gx-50 gap-3 md:gap-10 justify-content-between align-items-center gx-md-0 w-full p-6">
               <div className=" flex justify-between  md:w-1/3 ">
                 <div className=" mr-10 ">
                   <a href="index.html">
@@ -15,7 +15,7 @@ const Panner = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-col lg:flex-row gap-10 items-center  justify-between lg:w-2/3 w-full">
+              <div className="flex flex-col lg:flex-row gap-2 md:gap-10 items-center  justify-between lg:w-2/3 w-full">
                 <div className=" header-info  d-lg-flex pe-0">
                   <div className="header-info_icon">
                     <i className="fas fa-envelope"></i>
