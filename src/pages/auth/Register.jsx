@@ -64,18 +64,18 @@ const Register = () => {
                     <h1 className="hero-title">
                       ThinkAI & Beyond: The Future Intelligence
                     </h1>
-                    <p className="hero-text">
+                    {/* <p className="hero-text">
                       Sed porttitor lectus nibh. Vestibulum ac diam sit amet
                       quam vehicula lentum sed sit amet amet quam vehicula dui
                       amet quam vehicula.
-                    </p>
+                    </p> */}
                     <div className="hero-btns">
                       <a href="about.html" className="vs-btn">
                         About Us
                       </a>
-                      <a href="about.html" className="vs-btn style3">
-                        Get Started
-                      </a>
+                      <Link to="/login" className="vs-btn style3">
+                        Login
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -91,6 +91,7 @@ const Register = () => {
                     }}
                   >
                     <h3 className="title  ">Register Now</h3>
+                    <div className="flex flex-end w-full"></div>
                     <span className="subtitle">Make A Booking</span>
                     <div className="row gx-20">
                       <div className="col-md-12 form-group">

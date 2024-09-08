@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Register from "./pages/auth/Register";
 import Dash from "./pages/Dash";
@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./includes/Sidebar";
 import Nav from "./includes/Nav";
 import Panner from "./coponents/Panner";
+import AppLayout from "./pages/AppLayout";
+import About from "./coponents/About";
 
 const router = createBrowserRouter([
   {
@@ -17,36 +19,30 @@ const router = createBrowserRouter([
       <>
         <Panner />
 
-        <Register />
+        <Outlet />
+        <About />
       </>
     ),
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        index: true,
+        element: <Register />,
+      },
+    ],
   },
   {
     path: "/dashboard",
-    element: (
-      <div className="flex" style={{ display: "flex" }}>
-        <Sidebar />
-
-        <div className="flex flex-col gap-4 p-4 " style={{ flexGrow: 1 }}>
-          <Nav />
-          <Dash />
-        </div>
-      </div>
-    ),
+    element: <AppLayout />,
     loader: async () => {
       const res = await axios.get("http://localhost:8800/api/users");
 
       return res.data;
     },
     children: [],
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/sidebar",
-    element: <Sidebar />,
   },
 ]);
 
