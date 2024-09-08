@@ -6,8 +6,13 @@ import { toast } from "react-toastify";
 import Nav from "../../includes/Nav";
 import logo from "../../assets/logo.png";
 import Panner from "../../coponents/Panner";
+import * as Yup from "yup";
 
 const Register = () => {
+  const schema = Yup.object.shape({
+    email: Yup.string().email("enter valid email").required("required"),
+    fullName: Yup.string().required("required"),
+  });
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -16,6 +21,7 @@ const Register = () => {
       chosenPackage: "",
       ticketQuantity: 1,
     },
+    validationSchema: schema,
     onSubmit: (c) => {
       console.log("====================================");
       console.log(c);
