@@ -38,7 +38,9 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <AppLayout />,
     loader: async () => {
-      const res = await axios.get("http://localhost:8800/api/users");
+      const res = await axios.get(
+        "https://event-back-7ebi.vercel.app/api/users"
+      );
 
       return res.data;
     },

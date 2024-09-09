@@ -9,10 +9,14 @@ import Panner from "../../coponents/Panner";
 import * as Yup from "yup";
 
 const Register = () => {
-  const schema = Yup.object.shape({
-    email: Yup.string().email("enter valid email").required("required"),
-    fullName: Yup.string().required("required"),
+  const schema = Yup.object().shape({
+    email: Yup.string().email("Invalid email").required("Required"),
+    fullName: Yup.string().required("Required"),
+    phone: Yup.string().required("Required"),
+    companyName: Yup.string().required("Required"),
+    jobTitle: Yup.string().required("Required"),
   });
+
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -27,7 +31,7 @@ const Register = () => {
       console.log(c);
       console.log("====================================");
       axios
-        .post("http://localhost:8800/api/auth/register", c)
+        .post("https://event-back-7ebi.vercel.app/api/auth/register", c)
         .then((res) => {
           toast.success(res.data.message);
         })
@@ -94,15 +98,18 @@ const Register = () => {
                     <div className="flex flex-end w-full"></div>
                     <span className="subtitle">Make A Booking</span>
                     <div className="row gx-20">
-                      <div className="col-md-12 form-group">
+                      <div className="col-md-12 form-group relative  ">
                         <input
-                          className="form-control"
+                          className="form-control "
                           type="text"
                           name="fullName"
                           id="funame"
                           placeholder="Full Name"
                           onChange={formik.handleChange}
                         />
+                        <span className="text-white absolute bottom-[-23px] left-[20px]">
+                          {formik.errors.fullName}
+                        </span>
                       </div>
                       <div className="col-md-12 form-group">
                         <input
@@ -113,6 +120,9 @@ const Register = () => {
                           placeholder="Email Address"
                           onChange={formik.handleChange}
                         />
+                        <span className="text-white absolute bottom-[-23px] left-[20px]">
+                          {formik.errors.email}
+                        </span>
                       </div>
                       <div className="col-md-12 form-group">
                         <input
@@ -123,26 +133,35 @@ const Register = () => {
                           placeholder="Phone Number"
                           onChange={formik.handleChange}
                         />
+                        <span className="text-white absolute bottom-[-23px] left-[20px]">
+                          {formik.errors.phone}
+                        </span>
                       </div>
                       <div className="col-md-12 form-group">
                         <input
                           className="form-control"
                           type="tel"
-                          name="phone"
+                          name="companyName"
                           id="tel"
                           placeholder="Company Name"
                           onChange={formik.handleChange}
                         />
+                        <span className="text-white absolute bottom-[-23px] left-[20px]">
+                          {formik.errors.companyName}
+                        </span>
                       </div>
                       <div className="col-md-12 form-group">
                         <input
                           className="form-control"
                           type="tel"
-                          name="phone"
+                          name="jobTitle"
                           id="tel"
                           placeholder="Job Title"
                           onChange={formik.handleChange}
                         />
+                        <span className="text-white absolute bottom-[-23px] left-[20px]">
+                          {formik.errors.jobTitle}
+                        </span>
                       </div>
 
                       <div className="col-md-12 form-group">

@@ -2,24 +2,35 @@ import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import * as Yup from "yup";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const SignupSchema = Yup.object().shape({
+    email: Yup.string().email("Invalid email").required("Required"),
+    password: Yup.string().required("Required"),
+  });
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
+    validationSchema: SignupSchema,
     onSubmit: (values) => {
       navigate("/dashboard");
       console.log("====================================");
       console.log(values);
       console.log("====================================");
-      axios.post("http://localhost:8800/api/auth/login", values).then((res) => {
-        navigate("/dashboard");
-      });
+      axios
+        .post("https://event-back-7ebi.vercel.app/api/auth/login", values)
+        .then((res) => {
+          navigate("/dashboard");
+        });
     },
   });
+  console.log(formik.values);
 
   return (
     <section>
@@ -81,11 +92,14 @@ const Login = () => {
                         <input
                           className="form-control"
                           type="text"
-                          name="userName"
+                          name="email"
                           id="funame"
-                          placeholder="Full Name"
+                          placeholder="email"
                           onChange={formik.handleChange}
                         />
+                        <span className="text-white absolute bottom-[-23px] left-[20px]">
+                          {formik.errors.email}
+                        </span>
                       </div>
                       <div className="col-md-12 form-group">
                         <input
@@ -96,6 +110,9 @@ const Login = () => {
                           placeholder="password"
                           onChange={formik.handleChange}
                         />
+                        <span className="text-white absolute bottom-[-23px] left-[20px]">
+                          {formik.errors.password}
+                        </span>
                       </div>
 
                       <div className="col-md-12 form-group">
