@@ -1,34 +1,19 @@
 import SidebarLink from "../coponents/SidebarLink";
-import logo from "../assets/logo.png";
-
+import logoWh from "../assets/logo-white.png";
+import { MdOutlineEventAvailable } from "react-icons/md";
 const Sidebar = ({ show, setShow }) => {
   const data = [
     {
-      title: "Dashboard",
+      title: "Applied requests",
       subTitle: "Profile",
-    },
-    {
-      title: "Employee",
-      subTitle: "Profile",
-    },
-    {
-      title: "Payroll",
-      subTitle: "Profile",
-    },
-    {
-      title: "Holidays",
-      subTitle: "Profile",
-    },
-    {
-      title: "Advanced Payment",
-      subTitle: "Profile",
+      icon: <MdOutlineEventAvailable className="text-white text-2xl" />,
     },
   ];
 
   return (
     <div className="lg:p-5 h-screen  ">
       <div
-        className={`bg-white h-full   lg:w-[300px] w-0 border  overflow-hidden border-gray-200 py-5 rounded-3xl sm:flex flex-col gap-10 shadow   items-center ${
+        className={`bg-[#02bb5b] h-full   lg:w-[250px] w-0 border  overflow-hidden border-gray-200 py-5 rounded-3xl sm:flex flex-col gap-10 shadow   items-center ${
           show ? "!w-full z-50 fixed top-0 left-0 bottom-0 " : "w-0"
         }`}
       >
@@ -36,7 +21,7 @@ const Sidebar = ({ show, setShow }) => {
           <span className="text-4xl lg:hidden" onClick={() => setShow(false)}>
             &larr;
           </span>
-          <img src={logo} alt="" className="w-48" />
+          <img src={logoWh} alt="" className="w-56" />
         </div>
 
         <div className=" flex flex-col gap-8 mt-10 w-full">

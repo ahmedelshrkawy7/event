@@ -1,12 +1,13 @@
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
+import logo from "../assets/logo.png";
 
 const Nav = ({ setShow }) => {
   const navigate = useNavigate();
   return (
     <nav
-      className="flex items-center justify-between navbar navbar-expand-lg bg-white bg-body-tertiary md:h-20 rounded-xl border-1 border-gray-300 shadow  p-4 lg:p-8 
+      className="flex items-center justify-between navbar navbar-expand-lg bg-white bg-body-tertiary md:h-20 rounded-xl border-1 border-gray-300   p-4 lg:p-8 
     "
     >
       <FaBars
@@ -14,9 +15,7 @@ const Nav = ({ setShow }) => {
         onClick={() => setShow(true)}
       />
       <div className=" flex items-center justify-between  ">
-        <a className="navbar-brand text-blue-800 text-3xl" href="#">
-          Navbar
-        </a>
+        <img src={logo} alt="" className="w-40" />
         {/* <button
           className="navbar-toggler"
           type="button"

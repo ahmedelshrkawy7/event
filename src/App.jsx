@@ -11,18 +11,15 @@ import Nav from "./includes/Nav";
 import Panner from "./coponents/Panner";
 import AppLayout from "./pages/AppLayout";
 import About from "./coponents/About";
+import HeaderTop from "./coponents/HeaderTop";
+import Register2 from "./pages/auth/Register2";
+import { Schedule } from "./coponents/Schedule";
+import Layout from "./pages/Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <Panner />
-
-        <Outlet />
-        <About />
-      </>
-    ),
+    element: <Layout />,
     children: [
       {
         path: "/login",
@@ -42,7 +39,9 @@ const router = createBrowserRouter([
         "https://event-back-7ebi.vercel.app/api/users"
       );
 
-      return res.data;
+      const newData = res.data.reverse();
+
+      return newData;
     },
     children: [],
   },
