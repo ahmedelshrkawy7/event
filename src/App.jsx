@@ -11,16 +11,26 @@ import Nav from "./includes/Nav";
 import Panner from "./coponents/Panner";
 import AppLayout from "./pages/AppLayout";
 import About from "./coponents/About";
+import HeaderTop from "./coponents/HeaderTop";
+import Register2 from "./pages/auth/Register2";
+import { Schedule } from "./coponents/Schedule";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <Panner />
+        {/* <Panner /> */}
+
+        <HeaderTop />
 
         <Outlet />
+
+        <Register2 />
+
         <About />
+
+        <Schedule />
       </>
     ),
     children: [

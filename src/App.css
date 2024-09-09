@@ -79,7 +79,8 @@ Version: 1.0.0
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --theme-color: #024cbb;
+  --theme-color: #02bb5b;
+  --blue-color: #051650;
   --sec-color: #000000;
   --title-color: #272e39;
   --body-color: #565656;
@@ -4342,7 +4343,7 @@ a.text-theme:hover,
 }
 .vs-navbar.style3 .header-logo {
   padding: 25px 40px;
-  background-color: var(--theme-color);
+  /* background-color: var(--theme-color); */
   border-radius: 8px 0px 0px 8px;
   margin-left: -1px;
 }
@@ -5171,7 +5172,7 @@ a.text-theme:hover,
 }
 
 .header-top {
-  background-color: var(--sec-color);
+  /* background-color: var(--sec-color); */
   padding: 17px 0 46px;
   min-height: 90px;
 }
@@ -7116,8 +7117,9 @@ blockquote.vs-quote .quote-author {
 
 .hero-inner {
   z-index: 1;
-  min-height: 900px;
-  padding-top: 260px;
+  min-height: 100vh;
+  padding-top: 230px;
+  padding-bottom: 260px;
   /* Large devices */
   /* Medium devices */
 }
@@ -7142,12 +7144,11 @@ blockquote.vs-quote .quote-author {
   content: "";
   width: 100%;
   height: 101px;
-  background-color: #101c2f;
   bottom: -1px;
   z-index: 1;
 }
 .hero-inner .overlay {
-  background-color: rgb(1, 17, 44) !important;
+  background-color: rgb(1, 17, 44, 0.7) !important;
   opacity: 0.9;
   z-index: -1;
 }
@@ -7272,6 +7273,7 @@ blockquote.vs-quote .quote-author {
   height: 100%;
   background-size: cover;
   z-index: -2;
+  background-image: url("./assets/back.jpg");
 }
 
 .hero-info {
@@ -10153,16 +10155,16 @@ blockquote.vs-quote .quote-author {
 .form-style2 {
   padding: 60px 60px 40px 60px;
   margin-top: -130px;
-  background-color: var(--black-color);
+  /* background-color: var(--blue-color); */
 }
 .form-style2 .shape-1,
 .form-style2 .shape-2 {
   mix-blend-mode: normal;
   opacity: 0.4;
 }
-.form-style2 .vs-btn {
-  background-color: var(--black-color);
-}
+/* .form-style2 .vs-btn {
+  background-color: #014924;
+} */
 .form-style2 .vs-btn::after,
 .form-style2 .vs-btn::before {
   background-color: var(--theme-color);
