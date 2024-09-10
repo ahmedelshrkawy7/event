@@ -168,14 +168,15 @@ const Register2 = forwardRef((props, ref) => {
             <div className="row justify-content-center justify-content-lg-between">
               <div className="col-auto">
                 <p className="copyright-text">
-                  Copyright <i className="fal fa-copyright"></i> 2024{" "}
-                  <a href="index.html">Eventino</a>. All rights reserved by{" "}
+                  Copyrights ©️ 2024 <a href="index.html"></a>. Powered by
+                  ALEXON Enterprise Innovations{" "}
                   <a href="https://themeforest.net/user/vecuro_themes">
                     Vecuro
                   </a>
                   .
                 </p>
               </div>
+              {/* All rights reserved. Copyrights ©️ 2024 Powered by ALEXON Enterprise Innovations */}
             </div>
           </div>
         </div>

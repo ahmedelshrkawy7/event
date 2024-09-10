@@ -85,8 +85,7 @@ const Login = () => {
                         "linear-gradient(135deg, #024cbb 24%, #006 97%)",
                     }}
                   >
-                    <h3 className="title  ">Login Now</h3>
-                    <span className="subtitle">Make A Booking</span>
+                    <h3 className="title  ">Event Booking</h3>
                     <div className="row gx-20">
                       <div className="col-md-12 form-group">
                         <input
