@@ -4,7 +4,7 @@ import img1 from "../assets/New Project (1).png";
 
 const About = () => {
   return (
-    <section className="about space-top space-extra-bottom">
+    <section className="about space-top space-extra-bottom mt-36 sm:mt-0">
       <div className="container">
         <div className="row gx-40 align-items-center">
           <div className="col-lg-6">

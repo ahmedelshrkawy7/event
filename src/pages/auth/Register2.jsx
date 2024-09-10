@@ -7,6 +7,7 @@ import f2 from "../../assets/f-1-2.png";
 import footer1 from "../../assets/footer-2-1.png";
 import footer2 from "../../assets/footer-2-2.png";
 import * as Yup from "yup";
+import swal from "sweetalert";
 
 const Register2 = forwardRef((props, ref) => {
   const validationSchema = Yup.object().shape({
@@ -22,9 +23,6 @@ const Register2 = forwardRef((props, ref) => {
     initialValues: {
       fullName: "",
       email: "",
-      phone: "",
-      companyName: "",
-      jobTitle: "",
     },
     validationSchema: validationSchema,
     onSubmit: (c) => {
@@ -34,9 +32,23 @@ const Register2 = forwardRef((props, ref) => {
       axios
         .post("https://event-back-7ebi.vercel.app/api/auth/register", c)
         .then((res) => {
-          toast.success(
-            "Thank you for booking your spot at Think AI & Beyond The Future Intelligence, see you on 30th of September 2024"
-          );
+          // toast.success(
+          //   "Thank you for booking your spot at Think AI & Beyond The Future Intelligence, see you on 30th of September 2024"
+          // );
+          swal({
+            title: "Check your email now, please",
+
+            icon: "success",
+            buttons: {
+              confirm: {
+                text: "OK",
+                value: true,
+                visible: true,
+                className: "swal-button--custom",
+                closeModal: true,
+              },
+            },
+          });
         })
         .catch((err) => {
           toast.error(err.response.data.message);
@@ -47,30 +59,36 @@ const Register2 = forwardRef((props, ref) => {
     <>
       <footer className="footer-layout2 shape-mockup-wrap mt-10" ref={ref}>
         <div
-          className="shape-mockup d-none d-xl-block z-index-negative"
+          className="shape-mockup  d-xl-block z-index-negative"
           data-top="0%"
           data-left="0%"
         >
           <img src={footer1} alt="footer shape" />
         </div>
         <div
-          className="shape-mockup d-none d-xl-block z-index-negative end-0 bottom-0"
+          className="shape-mockup  d-xl-block z-index-negative end-0 bottom-0"
           data-bottom="0%"
           data-right="0%"
         >
           <img src={footer2} alt="footer shape" />
         </div>
         <div className="widget-area">
-          <div className="flex justify-center">
+          <div className="flex justify-center relative z-[999]">
             <h1 className="text-white text-5xl">Booking Now</h1>
           </div>
           <div className="container">
-            <div className="container my-40">
-              <form className="form-style2 " onSubmit={formik.handleSubmit}>
+            <div className="container sm:my-40">
+              <form
+                className="form-style2 m-0  "
+                onSubmit={formik.handleSubmit}
+              >
                 <img src={f1} alt="form shape" className="shape-1" />
                 <img src={f2} alt="form shape" className="shape-2" />
                 <div className="row gx-20">
-                  <div className="col-md-4 form-group">
+                  <div className="col-md-4 form-group flex flex-col  items-start">
+                    <label htmlFor="" className="text-white">
+                      Full Name *
+                    </label>
                     <input
                       className="form-control"
                       type="text"
@@ -84,7 +102,10 @@ const Register2 = forwardRef((props, ref) => {
                       <div className="text-white">{formik.errors.fullName}</div>
                     )}
                   </div>
-                  <div className="col-md-4 form-group">
+                  <div className="col-md-4 form-group flex flex-col  items-start">
+                    <label htmlFor="" className="text-white">
+                      Email *
+                    </label>
                     <input
                       className="form-control"
                       type="email"
@@ -98,7 +119,10 @@ const Register2 = forwardRef((props, ref) => {
                       <div className="text-white">{formik.errors.email}</div>
                     )}
                   </div>
-                  <div className="col-md-4 form-group">
+                  <div className="col-md-4 form-group flex flex-col  items-start">
+                    <label htmlFor="" className="text-white">
+                      Phone number
+                    </label>
                     <input
                       className="form-control"
                       type="tel"
@@ -109,10 +133,13 @@ const Register2 = forwardRef((props, ref) => {
                       value={formik.values.phone}
                     />
                   </div>
-                  <div className="col-md-4 form-group">
+                  <div className="col-md-4 form-group flex flex-col  items-start">
+                    <label htmlFor="" className="text-white">
+                      Company Name
+                    </label>
                     <input
                       className="form-control"
-                      type="tel"
+                      type="text"
                       name="companyName"
                       id="companyName"
                       placeholder="Company Name"
@@ -120,10 +147,13 @@ const Register2 = forwardRef((props, ref) => {
                       value={formik.values.companyName}
                     />
                   </div>
-                  <div className="col-md-4 form-group">
+                  <div className="col-md-4 form-group flex flex-col  items-start">
+                    <label htmlFor="" className="text-white">
+                      Job Title
+                    </label>
                     <input
                       className="form-control"
-                      type="tel"
+                      type="text"
                       name="jobTitle"
                       id="jobTitle"
                       placeholder="Job Title"
@@ -131,7 +161,8 @@ const Register2 = forwardRef((props, ref) => {
                       value={formik.values.jobTitle}
                     />
                   </div>
-                  <div className="col-md-4 form-group">
+                  <div className="col-md-4 form-group flex flex-col  items-start justify-center">
+                    <label htmlFor=""></label>
                     <button
                       className="vs-btn style2 mt-0 w-100 hover:bg-black"
                       type="submit"
@@ -150,11 +181,7 @@ const Register2 = forwardRef((props, ref) => {
               <div className="col-auto">
                 <p className="copyright-text">
                   Copyright © 2024 <a href="index.html"></a>. All rights
-                  reserved by{" "}
-                  <a href="https://themeforest.net/user/vecuro_themes">
-                    ALEXON Enterprise Innovations
-                  </a>
-                  .
+                  reserved by <a>ALEXON Enterprise Innovations</a>.
                 </p>
                 {/* All rights reserved. Copyrights © 2024 Powered by ALEXON Enterprise Innovations */}
               </div>

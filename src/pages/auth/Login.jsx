@@ -7,12 +7,11 @@ import logoWh from "../../assets/logo-white.png";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().required("Required"),
   });
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -28,9 +27,9 @@ const Login = () => {
       axios
         .post("https://event-back-7ebi.vercel.app/api/auth/login", values)
         .then((res) => {
-          navigate("/dashboard");
           toast.success("Logged in");
-          localStorage.setItem("token" ,"#1258$56!@")
+          localStorage.setItem("authToken", JSON.stringify("#1258$56!@"));
+          navigate("/dashboard");
         });
     },
   });
@@ -55,7 +54,7 @@ const Login = () => {
             ></div>
             {/* <Link to="/dashboard">dash</Link> */}
             <div className="container flex justify-center">
-              <div className="flex items-center sm:w-[550px] justify-center">
+              <div className="flex items-center sm:w-[450px] justify-center">
                 <div className="">
                   <form
                     className="form-style1 flex  flex-col gap-2 items-center ajax-contact bg-[#02bb5b]"
@@ -67,30 +66,30 @@ const Login = () => {
                     //     "linear-gradient(135deg, #024cbb 24%, #006 97%)",
                     // }}
                   >
-                    <img src={logoWh} className="w-72" />
-                    <h3 className="title !text-3xl !mb-10 ">Admin Dashboard</h3>
+                    <img src={logoWh} className="w-64 mb-10" />
+                    <h3 className="title !text-xl !mb-1 ">Admin Dashboard</h3>
 
-                    <div className="row gx-20">
-                      <div className="col-md-12 form-group">
+                    <div className="row gx-20 justify-center">
+                      <div className="col-md-10 form-group !h-[50px] ">
                         <input
-                          className="form-control"
+                          className="form-control !h-[50px]"
                           type="text"
                           name="email"
                           id="funame"
-                          placeholder="user name"
+                          placeholder="Username"
                           onChange={formik.handleChange}
                         />
                         <span className="text-white absolute bottom-[-23px] left-[20px]">
                           {formik.errors.email}
                         </span>
                       </div>
-                      <div className="col-md-12 form-group">
+                      <div className="col-md-10 form-group ">
                         <input
-                          className="form-control"
+                          className="form-control !h-[50px]"
                           type="password"
                           name="password"
                           id="email"
-                          placeholder="password"
+                          placeholder="Password"
                           onChange={formik.handleChange}
                         />
                         <span className="text-white absolute bottom-[-23px] left-[20px]">

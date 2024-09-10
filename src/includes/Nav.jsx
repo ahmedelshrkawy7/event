@@ -30,7 +30,10 @@ const Nav = ({ setShow }) => {
       </div>
       <MdLogout
         className="text-blue-500 text-3xl"
-        onClick={() => navigate("/login")}
+        onClick={() => {
+          localStorage.removeItem("authToken");
+          navigate("/login");
+        }}
       />
     </nav>
   );

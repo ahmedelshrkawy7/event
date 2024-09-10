@@ -12,7 +12,7 @@ const SidebarLink = ({ href, icon, id }) => {
       className={`animate_from_left ${id === 0 ? "" : `animation_delay-${id}`}`}
     >
       <div
-        className={`group flex items-center justify-between gap-2 transition hover:text-black  hover:bg-white w-full  px-10 rounded-e-3xl h-12 border-l-4 border-l-transparent hover:border-l-blue-500 `}
+        className={`group flex items-center justify-between gap-2 transition hover:text-black  hover:bg-white w-full  px-10 rounded-e-xl h-12 border-l-4 border-l-transparent hover:border-l-blue-500 `}
       >
         {/* <img
           src={icon}

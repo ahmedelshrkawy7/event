@@ -46,7 +46,7 @@ const HeaderTop = forwardRef((props, ref) => {
                       <img
                         src={logo}
                         alt="Eventino"
-                        className="logo"
+                        className="logo w-40 sm:w-64"
                         width="250"
                         height="60px"
                       />
@@ -56,9 +56,9 @@ const HeaderTop = forwardRef((props, ref) => {
 
                 <div className="">
                   <div className="header-btns v3">
-                    <div className="d-none d-lg-none d-md-flex d-xl-flex">
+                    <div className=" d-lg-none d-md-flex d-xl-flex ">
                       <a
-                        className="vs-btn"
+                        className="vs-btn cursor-pointer sm:w-48 !text-[12px] !sm:text-xl h-10 sm:h-16 p-2 !sm:p-20 !flex !items-center justify-center  "
                         tabIndex="0"
                         onClick={() => {
                           ref?.current?.scrollIntoView({ behavior: "smooth" });
@@ -67,10 +67,6 @@ const HeaderTop = forwardRef((props, ref) => {
                         Booking Now
                       </a>
                     </div>
-
-                    <button className="vs-menu-toggle d-inline-block d-lg-none">
-                      <i className="fal fa-bars"></i>
-                    </button>
                   </div>
                 </div>
               </div>
