@@ -7,8 +7,8 @@ const Dash = () => {
   return (
     <>
       <div
-        className="h-60 border border-gray-600 rounded-lg p-5 flex justify-between items-center"
-        style={{ background: "linear-gradient(135deg, #024cbb 11%, #006 48%)" }}
+        className="h-60 border border-gray-600 bg-black rounded-xl p-5 flex justify-between items-center"
+        // style={{ background: "linear-gradient(135deg, #024cbb 11%, #006 48%)" }}
       >
         <h1 className="text-3xl text-white">
           Think AI & Beyond: <br />
@@ -31,7 +31,7 @@ const Dash = () => {
             >
               <th
                 scope="col"
-                className="rounded-ss-lg px-4 py-2 text-white font-semibold text-left border-0"
+                className="rounded-ss-xl px-4 py-2 text-white font-semibold text-left !border-0"
               >
                 #
               </th>
@@ -61,7 +61,7 @@ const Dash = () => {
               </th>
               <th
                 scope="col"
-                className="rounded-se-lg px-4 py-2 text-white font-semibold text-left border-0"
+                className="rounded-se-xl px-4 py-2 text-white font-semibold text-left !border-0"
               >
                 Job Title
               </th>

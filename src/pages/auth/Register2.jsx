@@ -17,13 +17,6 @@ const Register2 = forwardRef((props, ref) => {
     email: Yup.string()
       .email("Invalid email format")
       .required("Email is required"),
-
-    phone: Yup.string().required("Phone number is required"),
-    companyName: Yup.string()
-      .required("Company Name is required")
-      .min(2, "Company Name must be at least 2 characters"),
-
-    jobTitle: Yup.string().required("Job Title is required"),
   });
   const formik = useFormik({
     initialValues: {
@@ -115,9 +108,6 @@ const Register2 = forwardRef((props, ref) => {
                       onChange={formik.handleChange}
                       value={formik.values.phone}
                     />
-                    {formik.errors.phone && formik.touched.phone && (
-                      <div className="text-white">{formik.errors.phone}</div>
-                    )}
                   </div>
                   <div className="col-md-4 form-group">
                     <input
@@ -129,12 +119,6 @@ const Register2 = forwardRef((props, ref) => {
                       onChange={formik.handleChange}
                       value={formik.values.companyName}
                     />
-                    {formik.errors.companyName &&
-                      formik.touched.companyName && (
-                        <div className="text-white">
-                          {formik.errors.companyName}
-                        </div>
-                      )}
                   </div>
                   <div className="col-md-4 form-group">
                     <input
@@ -146,9 +130,6 @@ const Register2 = forwardRef((props, ref) => {
                       onChange={formik.handleChange}
                       value={formik.values.jobTitle}
                     />
-                    {formik.errors.jobTitle && formik.touched.jobTitle && (
-                      <div className="text-white">{formik.errors.jobTitle}</div>
-                    )}
                   </div>
                   <div className="col-md-4 form-group">
                     <button
@@ -168,13 +149,14 @@ const Register2 = forwardRef((props, ref) => {
             <div className="row justify-content-center justify-content-lg-between">
               <div className="col-auto">
                 <p className="copyright-text">
-                  Copyrights ©️ 2024 <a href="index.html"></a>. Powered by
-                  ALEXON Enterprise Innovations{" "}
+                  Copyright © 2024 <a href="index.html"></a>. All rights
+                  reserved by{" "}
                   <a href="https://themeforest.net/user/vecuro_themes">
-                    Vecuro
+                    ALEXON Enterprise Innovations
                   </a>
                   .
                 </p>
+                {/* All rights reserved. Copyrights © 2024 Powered by ALEXON Enterprise Innovations */}
               </div>
               {/* All rights reserved. Copyrights ©️ 2024 Powered by ALEXON Enterprise Innovations */}
             </div>

@@ -11,9 +11,9 @@ const Sidebar = ({ show, setShow }) => {
   ];
 
   return (
-    <div className="lg:p-5 h-screen  ">
+    <div className=" h-screen relative lg:w-[250px] ">
       <div
-        className={`bg-[#02bb5b] h-full   lg:w-[250px] w-0 border  overflow-hidden border-gray-200 py-5 rounded-3xl sm:flex flex-col gap-10 shadow   items-center ${
+        className={`bg-[#02bb5b] h-full fixed top-5 bottom-0 left-2   lg:w-[250px] w-0 border  overflow-hidden border-gray-200 py-5 rounded-xl sm:flex flex-col gap-10 shadow   items-center ${
           show ? "!w-full z-50 fixed top-0 left-0 bottom-0 " : "w-0"
         }`}
       >

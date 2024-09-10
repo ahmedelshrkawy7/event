@@ -63,7 +63,7 @@ export const Schedule = () => {
   ];
 
   return (
-    <footer className=" shape-mockup-wrap mt-10">
+    <footer className=" shape-mockup-wrap mt-10 !mb-40">
       {/* <div
         className="shape-mockup d-none d-xl-block z-index-negative"
         data-top="0%"
