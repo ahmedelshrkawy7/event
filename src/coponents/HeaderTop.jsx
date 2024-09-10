@@ -1,4 +1,5 @@
 import { useRef, forwardRef } from "react";
+import logo from "../assets/SiteLogo.png";
 
 const HeaderTop = forwardRef((props, ref) => {
   const section = useRef();
@@ -43,7 +44,7 @@ const HeaderTop = forwardRef((props, ref) => {
                   <div className="header-logo">
                     <a href="index.html">
                       <img
-                        src="https://hr-ess.zakq8.com/SiteLogo.ashx"
+                        src={logo}
                         alt="Eventino"
                         className="logo"
                         width="250"

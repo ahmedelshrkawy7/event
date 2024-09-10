@@ -3,6 +3,8 @@ import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import logoWh from "../../assets/logo-white.png";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,13 +29,14 @@ const Login = () => {
         .post("https://event-back-7ebi.vercel.app/api/auth/login", values)
         .then((res) => {
           navigate("/dashboard");
+          toast.success("Logged in");
         });
     },
   });
   console.log(formik.values);
 
   return (
-    <section>
+    <section className="h-screen">
       <div
         className="vs-carousel style1"
         data-autoplay="false"
@@ -42,51 +45,30 @@ const Login = () => {
         data-arrows="false"
       >
         <div>
-          <div className="hero-inner" style={{ backgroundColor: "#101c2f" }}>
+          <div className="hero-inner !pt[210px]">
             <div className="overlay"></div>
             <div
-              className="hero-bg"
+              className="hero-bg !bg-black "
               data-bg-src="assets/img/bg/h-1-1.jpg"
+              style={{ backgroundImage: "none" }}
             ></div>
             {/* <Link to="/dashboard">dash</Link> */}
-            <div className="container">
-              <div className="row justify-content-between">
-                <div className="col-lg-6">
-                  <div className="hero-content">
-                    <span className="hero-subtitle">
-                      Get Best event Management
-                    </span>
-                    <h1 className="hero-title">
-                      ThinkAI & Beyond: The Future Intelligence
-                    </h1>
-                    {/* <p className="hero-text">
-                    Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                    quam vehicula lentum sed sit amet amet quam vehicula dui
-                    amet quam vehicula.
-                  </p> */}
-                    <div className="hero-btns">
-                      <a href="about.html" className="vs-btn">
-                        About Us
-                      </a>
-                      <Link to="/" className="vs-btn style3">
-                        Register
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-5">
+            <div className="container flex justify-center">
+              <div className="flex items-center sm:w-[550px] justify-center">
+                <div className="">
                   <form
-                    className="form-style1 ajax-contact"
+                    className="form-style1 flex  flex-col gap-2 items-center ajax-contact bg-[#02bb5b]"
                     action="mail.php"
                     method="post"
                     onSubmit={formik.handleSubmit}
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #024cbb 24%, #006 97%)",
-                    }}
+                    // style={{
+                    //   background:
+                    //     "linear-gradient(135deg, #024cbb 24%, #006 97%)",
+                    // }}
                   >
-                    <h3 className="title  ">Login Now</h3>
-                    <span className="subtitle">Make A Booking</span>
+                    <img src={logoWh} className="w-72" />
+                    <h3 className="title !text-3xl !mb-10 ">Admin Dashboard</h3>
+
                     <div className="row gx-20">
                       <div className="col-md-12 form-group">
                         <input
@@ -94,7 +76,7 @@ const Login = () => {
                           type="text"
                           name="email"
                           id="funame"
-                          placeholder="email"
+                          placeholder="user name"
                           onChange={formik.handleChange}
                         />
                         <span className="text-white absolute bottom-[-23px] left-[20px]">
