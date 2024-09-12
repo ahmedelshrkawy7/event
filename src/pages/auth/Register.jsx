@@ -32,8 +32,11 @@ const Register = () => {
                   {/* <span className="hero-subtitle">
                       Get Best event Management
                     </span> */}
-                  <div className="sm:w-1/2 flex  ">
-                    <img src={logo} className="w-[400px] object-contain " />
+                  <div className="sm:w-1/2 flex justify-center w-full ">
+                    <img
+                      src={logo}
+                      className=" w-[300px]  sm:w-[400px] object-contain "
+                    />
                   </div>
                   <h1 className="hero-title sm:w-1/2 text-[50px]">
                     Think AI & Beyond: <br /> The Future Intelligence

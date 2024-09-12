@@ -21,8 +21,7 @@ const HeaderTop = forwardRef((props, ref) => {
                 <span>
                   <i className="fas fa-map-marker-alt"></i>
                 </span>
-                Shuwaikh Industrial Area, Sun City Complex, Block A Canada Dry
-                St., Kuwait
+                Arraya Tower, Floor 46 ,Kuwait City, Sharq
               </p>
               <p className="header-text style2">
                 <span>
@@ -58,13 +57,13 @@ const HeaderTop = forwardRef((props, ref) => {
                   <div className="header-btns v3">
                     <div className=" d-lg-none d-md-flex d-xl-flex ">
                       <a
-                        className="vs-btn cursor-pointer sm:w-48 !text-[12px] !sm:text-xl h-10 sm:h-16 p-2 !sm:p-20 !flex !items-center justify-center  "
+                        className="vs-btn cursor-pointer sm:w-48   !sm:text-3xl  h-10 sm:h-16 p-2 !sm:p-20 !flex !items-center justify-center  "
                         tabIndex="0"
                         onClick={() => {
                           ref?.current?.scrollIntoView({ behavior: "smooth" });
                         }}
                       >
-                        Booking Now
+                        Registegr Now
                       </a>
                     </div>
                   </div>

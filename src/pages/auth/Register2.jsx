@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import { toast } from "react-toastify";
 import f1 from "../../assets/f-1-1.png";
 import f2 from "../../assets/f-1-2.png";
@@ -10,8 +10,10 @@ import * as Yup from "yup";
 import swal from "sweetalert";
 
 const Register2 = forwardRef((props, ref) => {
+  const [loader, setLoader] = useState(false);
+
   const validationSchema = Yup.object().shape({
-    fullName: Yup.string()
+    name: Yup.string()
       .required("Full Name is required")
       .min(3, "Full Name must be at least 3 characters"),
 
@@ -21,7 +23,7 @@ const Register2 = forwardRef((props, ref) => {
   });
   const formik = useFormik({
     initialValues: {
-      fullName: "",
+      name: "",
       email: "",
     },
     validationSchema: validationSchema,
@@ -29,14 +31,17 @@ const Register2 = forwardRef((props, ref) => {
       console.log("====================================");
       console.log(c);
       console.log("====================================");
+      setLoader(true);
       axios
-        .post("https://event-back-7ebi.vercel.app/api/auth/register", c)
+        .post("https://admin-event.alexondev.net/api/form", c)
         .then((res) => {
           // toast.success(
           //   "Thank you for booking your spot at Think AI & Beyond The Future Intelligence, see you on 30th of September 2024"
           // );
+
           swal({
-            title: "Check your email now, please",
+            title: "Thank you",
+            text: " For booking your spot at Think AI & Beyond:The Future Intelligence, see you on 30th of September 2024 .",
 
             icon: "success",
             buttons: {
@@ -52,6 +57,9 @@ const Register2 = forwardRef((props, ref) => {
         })
         .catch((err) => {
           toast.error(err.response.data.message);
+        })
+        .finally(() => {
+          setLoader(false);
         });
     },
   });
@@ -92,14 +100,14 @@ const Register2 = forwardRef((props, ref) => {
                     <input
                       className="form-control"
                       type="text"
-                      name="fullName"
+                      name="name"
                       id="funame"
                       placeholder="Full Name"
                       onChange={formik.handleChange}
-                      value={formik.values.fullName}
+                      value={formik.values.name}
                     />
-                    {formik.errors.fullName && formik.touched.fullName && (
-                      <div className="text-white">{formik.errors.fullName}</div>
+                    {formik.errors.name && formik.touched.name && (
+                      <div className="text-white">{formik.errors.name}</div>
                     )}
                   </div>
                   <div className="col-md-4 form-group flex flex-col  items-start">
@@ -140,7 +148,7 @@ const Register2 = forwardRef((props, ref) => {
                     <input
                       className="form-control"
                       type="text"
-                      name="companyName"
+                      name="company"
                       id="companyName"
                       placeholder="Company Name"
                       onChange={formik.handleChange}
@@ -164,10 +172,17 @@ const Register2 = forwardRef((props, ref) => {
                   <div className="col-md-4 form-group flex flex-col  items-start justify-center">
                     <label htmlFor=""></label>
                     <button
-                      className="vs-btn style2 mt-0 w-100 hover:bg-black"
+                      className="vs-btn style2 mt-0 w-100 hover:bg-black !flex !justify-center"
                       type="submit"
+                      disabled={loader}
                     >
-                      Register Now
+                      {loader ? (
+                        <svg viewBox="25 25 50 50">
+                          <circle r="20" cy="50" cx="50"></circle>
+                        </svg>
+                      ) : (
+                        "Register Now"
+                      )}
                     </button>
                   </div>
                 </div>

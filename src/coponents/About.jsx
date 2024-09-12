@@ -31,15 +31,18 @@ const About = () => {
             </h2>
             <p>
               We are delighted to invite you to our upcoming event, "ThinkAI &
-              Beyond: The Future Intelligence," set to take place on 30th
-              September 2024 at Mövenpick Hotel & Resort Al Bida’a. This premier
-              gathering will explore the transformative impact of artificial
-              intelligence and its future potential across various industries.
-              Join us for an engaging day filled with insightful discussions,
-              cutting-edge presentations, and interactive sessions led by
-              industry leaders and visionaries. Discover how AI is shaping the
-              future of technology and innovation and gain valuable insights
-              into emerging trends and strategies.
+              Beyond: The Future Intelligence," set to take place on{" "}
+              <span className="font-semibold">
+                {" "}
+                30th September 2024 at Radisson Blu Hotel & Dasman Ballroom.
+              </span>{" "}
+              This premier gathering will explore the transformative impact of
+              artificial intelligence and its future potential across various
+              industries. Join us for an engaging day filled with insightful
+              discussions, cutting-edge presentations, and interactive sessions
+              led by industry leaders and visionaries. Discover how AI is
+              shaping the future of technology and innovation and gain valuable
+              insights into emerging trends and strategies.
             </p>
           </div>
         </div>
